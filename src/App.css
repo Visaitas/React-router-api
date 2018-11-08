@@ -1,32 +1,296 @@
 .App {
-  text-align: center;
+  min-height: 20vh;
+  height: 20vmin;
+  min-width: 100%;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+  height: 30vmin;
+  display: flex;
+  width: 100%;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(20, 3, 3);
 }
 
 .App-link {
-  color: #61dafb;
+  color: #52cdf0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-ProfileWidget {
+  margin-left: 10px;
+}
+
+.w3-myfont {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+/* 
+Component App-body
+*/
+
+
+.App-body {
+  background-color: #ffffff;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: calc(3px + 2vmin);
+  color: rgb(0, 0, 0);
+}
+
+.body-left {
+  display: flex;
+  flex: 0.5;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.body-right {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+/* 
+Component Body-tap
+*/
+
+.body-tap{
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  background-color: #fafafa6c;
+  height: 5vh;
+  width: 100%;
+}
+
+
+.Body-tap{
+  display: flex;
+  flex: 1;
+  background-color: #14030300;
+  align-items: center;
+  justify-content: center;
+  padding: 2vh;
+}
+
+
+
+
+/* 
+Component Img profile
+*/
+
+.Img-profile {
+  position: relative;
+  top: -10%;
+  min-width: 25vh;
+  min-height: 25vh;
+  width: 25%;
+  height: 25%;
+  border-radius: 50%;
+}
+
+.Img-profile-position {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+
+
+
+/* 
+Component profile
+*/
+
+.text-profile-position-git {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.text-profile-position-git-name {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+}
+
+
+
+
+.text-profile-position {
+  position: relative;
+  top: -10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+}
+
+.text-Content-position{
+  position: relative;
+  top: -10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  border: 1px solid rgb(125, 207, 228); 
+  border-radius: 40px;
+  width: 70%;
+}
+.text-Content-position-about{
+  background-color: #a0f4ff33;
+  position: relative;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  border: 1px solid rgb(143, 219, 238); 
+  border-radius: 40px;
+  width: 90%;
+  margin-bottom: 2vh;
+  margin-top: 5vh;
+}
+
+.text-profile-position{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+}
+
+
+/* 
+Component contact
+*/
+
+.contact-list-position{
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-list-positon-icon{
+  margin-bottom: 2vh;
+  
+}
+
+.contact-list-positon-icon-text{
+  display: flex;
+  align-items: center;
+  color: #73b1c2;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+
+.img_Contact{
+  width: 5vh;
+  height: 5vh;
+  margin-right: 2vh;
+}
+
+/* 
+Component Instagram
+ */
+
+.Instagram-position{
+
+}
+
+/* 
+Component Search
+ */
+
+.search-bar {
+  margin: 20px;
+  text-align: center;
+}
+
+.input {
+  width: 20%;
+}
+
+.search {
+  margin-left: 4vh;
+  width: 20%;
+}
+
+
+
+
+
+
+/* 
+Component video-item
+*/
+
+.video-item img {
+  max-width: 64px;
+}
+
+.video-detail {
+  margin-top: 10px;
+  padding: 10px;
+  flex-direction: column;
+  display: flex;
+}
+
+.video-player-position {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.video-player {
+  width: 70vh;
+  height: 50vh;
+}
+
+.video-text-details{
+  margin-top: 5vmin;
+  border: 1px solid #ddd; 
+  border-radius: 4px;
+}
+
+
+.video-list{
+  display: flex;
+  flex-direction: row;
+}
+
+/* 
+Component media
+*/
+
+.media-left{
+  justify-content: center;
+  align-items: center;
+}
+
+.media-body{
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.media-heading{
+  margin-left: 5vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-group-item {
+  cursor: pointer;
+}
+
+.list-group-item:hover {
+  background-color: #eee;
 }

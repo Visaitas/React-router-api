@@ -3,9 +3,9 @@ import { Route, Switch , Link } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 import Home from './components/Home'
-
-
-import ProfileList from './containers/profile-list'
+import Header from './components/common/Header'
+import Bodytap from './components/common/Bodytap'
+import Profile from './components/Profile'
 import { Provider } from 'react-redux';
 import reducers from './reducers';
 import { createStore,applyMiddleware } from 'redux';
@@ -18,9 +18,11 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
+          <Bodytap />
+          <Header />
           <Switch>
             <Route exact path="/" component={Home} />
-          
+            <Route path="/Profile" component={Profile} />
           </Switch>
         </div>
       </Provider>
@@ -30,4 +32,3 @@ class App extends Component {
 
 export default App;
 
-   // <Route path="/profile-list" component={ProfileList} />

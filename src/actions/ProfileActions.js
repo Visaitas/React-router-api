@@ -2,7 +2,9 @@ import {
     SEARCH_TEXT ,
     SEARCH_SUCCESS,
     SEARCH_UN_SUCCESS,
-    SEARCH_LOAD
+    SEARCH_LOAD,
+    PROFILE_LOAD,
+    PROFILE_DATA
 } from './types';
 import axios from 'axios';
 
@@ -25,6 +27,20 @@ export const getUser = ( text ) => {
     };
 
 };
+
+
+
+export const getProfile = () => {
+    var user = 'Visaitas';
+    return (dispatch) => {
+        dispatch({ type: PROFILE_LOAD  });
+        axios.get(`https://api.github.com/users/${user}/repos`)
+        .then(response =>{
+            dispatch({ type: PROFILE_DATA , payload:  response.data });
+        });
+    };
+};
+
 
 
 

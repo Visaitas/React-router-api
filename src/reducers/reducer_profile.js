@@ -2,14 +2,17 @@ import {
     SEARCH_TEXT ,
     SEARCH_SUCCESS,
     SEARCH_UN_SUCCESS,
-    SEARCH_LOAD
+    SEARCH_LOAD,
+    PROFILE_LOAD,
+    PROFILE_DATA
 } from '../actions/types';
 
 
 const INITAL_STATE = { 
     term: '',
     data: '',
-    loading: null
+    loading: null,
+    userdata: '',
 };
 
 export default (state = INITAL_STATE,action ) => {
@@ -21,9 +24,13 @@ export default (state = INITAL_STATE,action ) => {
         case SEARCH_LOAD:
             return {...state ,loading: true}     
         case SEARCH_SUCCESS:
-           return {...state ,data: action.payload , loading: false}
+           return {...state , data: action.payload , loading: false}
         case SEARCH_UN_SUCCESS:
             return { ...state};  
+        case PROFILE_LOAD:
+            return { ...state }; 
+        case PROFILE_DATA:
+            return { ...state , userdata: action.payload  };     
         default:
             return state;
     }

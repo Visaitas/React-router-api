@@ -41,7 +41,7 @@ class Home extends Component {
         }else if(this.props.loading === false){
             return(
                 <div className= "text-Content-position-about">
-                    <h1> Found Data = {this.props.data.items.length}</h1>
+                    <h1> Found Data Repository = {this.props.data.items.length}</h1>
                     <div className= "text-profile-position-git">
                         {this.renderListProfile()}
                     </div>
@@ -54,11 +54,14 @@ class Home extends Component {
         return _.map((this.props.data.items), (item) => {
             return(
                 <div className = "text-profile-position-git-name" >
-                    <div>
-                        <img  width="20%" src={item.owner.avatar_url} alt="Card image cap" />
-                    </div>
-                    <div>
-                        <h3> {item.name}  </h3>
+                    <div className = "img-profile-position-git-name">
+                        <img  className="img-size" src={item.owner.avatar_url} alt="Card image cap" />
+                        <div className="text-margin">
+                            <p className ="text-center">Name: {item.name}  </p>
+                            <p className ="text-center">Fullname: {item.full_name}  </p>
+                            <p className ="text-center">description: {item.description}  </p>
+                            <a className ="text-center" href={item.html_urls}>{item.owner.repos_url}  </a>
+                        </div>
                     </div>
                 </div>
             )
@@ -69,8 +72,7 @@ class Home extends Component {
     render() {
       return (
         <div>
-            <Bodytap />
-            <Header />
+            
             <div className={'App-body'}>
                 <div className={'body-left'}>
                     <ProfileWidget />

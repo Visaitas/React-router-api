@@ -107,8 +107,66 @@ Component Img profile
 
 
 /* 
-Component profile
+Component Home
 */
+
+.text-center{
+  justify-content: center;
+  align-items: center;  
+  font-size: 90%;
+}
+
+.text-margin{
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+.img-size-profile{
+  border-radius: 20vh;
+  width: 25vh;
+  height: 25vh;
+  margin-left: 2%;
+}
+
+.img-size{
+  border-radius: 20vh;
+  width: 25vh;
+  height: 25vh;
+  margin-left: 2%;
+}
+
+.img-profile-position-git-name{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+  width: 90%;
+  border: 1px solid rgb(158, 236, 184); 
+  border-radius: 40px;
+  margin-bottom: 3vh;
+  background-color: #ffffffc9;
+}
+
+.text-profile-position-git-name {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+  width: 90%;
+}
+
+.text-profile-position-git-name-profile {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+  width: 120%;
+}
+
+
+
+
 
 .text-profile-position-git {
   position: relative;
@@ -117,14 +175,10 @@ Component profile
   align-items: center;  
 }
 
-.text-profile-position-git-name {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;  
-}
 
-
+/* 
+Component profile
+*/
 
 
 .text-profile-position {

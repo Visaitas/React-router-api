@@ -1,34 +1,56 @@
 import React, { Component } from 'react';
-import { Route, Switch , Link } from "react-router-dom";
-import logo from './logo.svg';
 import './App.css';
-import Home from './components/Home'
-import Header from './components/common/Header'
-import Bodytap from './components/common/Bodytap'
-import Profile from './components/Profile'
-import { Provider } from 'react-redux';
-import reducers from './reducers';
-import { createStore,applyMiddleware } from 'redux';
-import ReduxThunk from 'redux-thunk';
+import { Layout , Header , Navigation , Drawer, Content , Footer , FooterSection , FooterLinkList} from 'react-mdl';
+import Main from './components/Main';
+import { Link } from 'react-router-dom';
 
-const store = createStore(reducers, {} , applyMiddleware(ReduxThunk));
+
 
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <div className="App">
-          <Bodytap />
-          <Header />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/Profile" component={Profile} />
-          </Switch>
-        </div>
-      </Provider>
+      <div className="demo-big-content">
+        <Layout>
+            <Header title="PORTFOLIO" scroll className="header-color">
+                <Navigation>
+                    <a href="https://drive.google.com/open?id=1wHMfzAsIc1ldTDaNf-NO6QZlQH6JIQpz">RESUME</a>
+                    <Link to="/Profile">PROFILE</Link>
+                    <Link to="/contact">CONTACT</Link>
+                    <Link to="/aboutme">PROJECT</Link>
+                </Navigation>
+            </Header>
+            <Drawer title="Title">
+                <Navigation>
+                    <Link to="/">HOME</Link>
+                    <Link to="/Profile">PROFILE</Link>
+                    <Link to="/contact">CONTACT</Link>
+                    <Link to="/aboutme">PROJECT</Link>
+                </Navigation>
+            </Drawer>
+            <Content>
+                <div className="page-content" />
+                <Main />
+            </Content>
+        </Layout>
+      </div>
     );
   }
 }
 
+
+
+
 export default App;
 
+
+
+// <Provider store={store}>
+// <div className="App">
+//   <Bodytap />
+//   <Header />
+//   <Switch>
+//     <Route exact path="/" component={Home} />
+//     <Route path="/Profile" component={Profile} />
+//   </Switch>
+// </div>
+// </Provider>

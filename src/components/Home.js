@@ -9,8 +9,7 @@ import AboutMe from './common/AboutMe'
 import { search_change_text , getUser } from '../actions'
 import { connect } from 'react-redux'
 import _ from 'lodash'
-import { Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { Grid, Cell } from 'react-mdl'
 
 class Home extends Component {
     constructor(props){
@@ -19,87 +18,47 @@ class Home extends Component {
         this.state = { status: null };
     }
 
-
-    onInputChange(term){
-        this.props.search_change_text(term);
-    }
-
-    onPressKey(term){
-        this.props.getUser(term);
-    }
-
-
-    renderData(){
-        if(this.props.loading === true){
-            console.log("Not Data",this.props.data)
-
-            return(
-                <div className= "text-Content-position-about">
-                    <h1> Data Not Found </h1>
-                </div>
-            )
-        }else if(this.props.loading === false){
-            return(
-                <div className= "text-Content-position-about">
-                    <h1> Found Data Repository = {this.props.data.items.length}</h1>
-                    <div className= "text-profile-position-git">
-                        {this.renderListProfile()}
-                    </div>
-                </div>
-            )
-        }
-    }
-
-    renderListProfile(){
-        return _.map((this.props.data.items), (item) => {
-            return(
-                <div className = "text-profile-position-git-name" >
-                    <div className = "img-profile-position-git-name">
-                        <img  className="img-size" src={item.owner.avatar_url} alt="Card image cap" />
-                        <div className="text-margin">
-                            <p className ="text-center">Name: {item.name}  </p>
-                            <p className ="text-center">Fullname: {item.full_name}  </p>
-                            <p className ="text-center">description: {item.description}  </p>
-                            <a className ="text-center" href={item.html_urls}>{item.owner.repos_url}  </a>
-                        </div>
-                    </div>
-                </div>
-            )
-        })
-    }
-
-
     render() {
       return (
-        <div>
-            
-            <div className={'App-body'}>
-                <div className={'body-left'}>
-                    <ProfileWidget />
-                    <NameContent />
-                    <Content />
-                </div>
-                <div className={'body-right'}>
-                    <div className="search-bar">
-                        <input 
-                            className= "input"
-                            value = {this.props.term}
-                            onChange={(value)=>this.onInputChange(value.target.value)}
-                        />
-                        <button 
-                        className= "search"         
-                        onClick = {(value)=>this.onPressKey(value.target.value)}
-                        value = {this.props.term}
-                        >
-                            Search
-                        </button>
-                    </div>
-                    <div>
-                        {this.renderData()}
-                    </div>
-                </div>
+            <div style ={{ width: '100%' , margin: 'auto' ,}}>
+                <Grid className="landing-grid">
+                    <Cell col={12}> 
+                        <div style = {{ paddingTop: '5%'}}>
+                            <img 
+                                src = {require('../asset/images/Profile.jpg')}
+                                alt="avatar"
+                                className="avatar-img"
+                            />
+                        </div>
+                        <div className ="banner-text">
+                            <h1>internship</h1>
+
+                            <hr />
+                            <p>HTML/CSS | Bootstrap | JavaScript | React | React Native | MySQL </p>
+
+                            <div className="social-links">   
+                                {/* LinkedIn */}
+                                <a href="https://www.google.com" target="_blank" rel="noopener noreferrer"> 
+                                    <i className="fa fa-linkedin-square" aria-hidden="true"  />
+                                </a>
+                                {/* Github */}
+                                <a href="https://www.github.com" target="_blank" rel="noopener noreferrer"> 
+                                    <i className="fa fa-github-square" aria-hidden="true"  />
+                                </a>
+                                 {/* Facebook */}
+                                 <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"> 
+                                    <i className="fa fa-facebook-square" aria-hidden="true"  />
+                                </a>
+                                {/* Youtube */}
+                                <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"> 
+                                   <i className="fa fa-youtube-square" aria-hidden="true"  />
+                               </a>
+                            </div>
+                        </div>
+
+                    </Cell>
+                </Grid>
             </div>
-        </div>
       );
     }
 
@@ -109,14 +68,14 @@ class Home extends Component {
 
 const mapStateToProps = ({profiles}) =>{
 
-    const { term, data , loading } = profiles;
+    const { data  } = profiles;
 
-   return { term ,  data , loading  };
+   return {  data  };
 };
 
 
 
-export default connect(mapStateToProps,{ 
-    search_change_text,
-    getUser
-})(Home);
+export default connect(mapStateToProps,)(Home);
+
+
+

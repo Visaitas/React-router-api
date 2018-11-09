@@ -4,7 +4,9 @@ import {
     SEARCH_UN_SUCCESS,
     SEARCH_LOAD,
     PROFILE_LOAD,
-    PROFILE_DATA
+    PROFILE_DATA,
+    PAGE_CHANGE,
+    PAGE_LOAD
 } from '../actions/types';
 
 
@@ -13,6 +15,7 @@ const INITAL_STATE = {
     data: '',
     loading: null,
     userdata: '',
+    page: ''
 };
 
 export default (state = INITAL_STATE,action ) => {
@@ -26,11 +29,13 @@ export default (state = INITAL_STATE,action ) => {
         case SEARCH_SUCCESS:
            return {...state , data: action.payload , loading: false}
         case SEARCH_UN_SUCCESS:
-            return { ...state};  
+            return { ...state , loading: false};  
         case PROFILE_LOAD:
             return { ...state }; 
         case PROFILE_DATA:
             return { ...state , userdata: action.payload  };     
+        case PAGE_CHANGE:
+            return { ...state , page: action.payload  };          
         default:
             return state;
     }

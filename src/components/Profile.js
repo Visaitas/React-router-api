@@ -9,6 +9,7 @@ import AboutMe from './common/AboutMe'
 import { getProfile } from '../actions'
 import { connect } from 'react-redux'
 import _ from 'lodash'
+import { search_change_text , getUser} from '../actions'
 
 class Profile extends Component {
     constructor(props){
@@ -79,13 +80,20 @@ class Profile extends Component {
 
 const mapStateToProps = ({ profiles }) =>{
 
-    const { userdata  } = profiles;
+    const { userdata , term, data , loading} = profiles;
 
-   return { userdata  };
+   return { userdata  , term ,  data , loading };
 };
 
 
 
 export default connect(mapStateToProps,{ 
-    getProfile
+    getProfile,
+    search_change_text,
+    getUser
 })(Profile);
+
+
+
+
+

@@ -10,7 +10,7 @@ class contact extends Component {
           <Cell col={6}>
             <h2>Paul Hanna</h2>
             <img
-              src="https://cdn2.iconfinder.com/data/icons/avatar-2/512/Fred_man-512.png"
+              src={require('../asset/images/Profile.jpg')} 
               alt="avatar"
               style={{height: '250px'}}
                />
@@ -24,25 +24,19 @@ class contact extends Component {
                 <ListItem>
                   <ListItemContent style={{fontSize: '30px', fontFamily: 'Anton'}}>
                     <i className="fa fa-phone-square" aria-hidden="true"/>
-                    (123) 456-7890
+                    096-474-6048
                   </ListItemContent>
                 </ListItem>
                 <ListItem>
                   <ListItemContent style={{fontSize: '30px', fontFamily: 'Anton'}}>
                     <i className="fa fa-fax" aria-hidden="true"/>
-                    (123) 456-7890
+                    Visaitas
                   </ListItemContent>
                 </ListItem>
                 <ListItem>
                   <ListItemContent style={{fontSize: '30px', fontFamily: 'Anton'}}>
                     <i className="fa fa-envelope" aria-hidden="true"/>
-                    someone@example.com
-                  </ListItemContent>
-                </ListItem>
-                <ListItem>
-                  <ListItemContent style={{fontSize: '30px', fontFamily: 'Anton'}}>
-                    <i className="fa fa-skype" aria-hidden="true"/>
-                    MySkypeID
+                    v58160148@gmail.com
                   </ListItemContent>
                 </ListItem>
               </List>

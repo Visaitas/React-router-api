@@ -11,9 +11,9 @@ import Profile from './Profile'
 import contact from './contact'
 import aboutme from './aboutme'
 import Resume from './resume'
+import createLogger from 'redux-logger'
 
-
-const store = createStore(reducers, {} , applyMiddleware(ReduxThunk));
+const store = createStore(reducers, {} , applyMiddleware(ReduxThunk, createLogger));
 
 const Main = () => {
     return(

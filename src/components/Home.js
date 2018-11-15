@@ -42,11 +42,11 @@ class Home extends Component {
                                     <i className="fa fa-linkedin-square" aria-hidden="true"  />
                                 </a>
                                 {/* Github */}
-                                <a href="https://www.github.com" target="_blank" rel="noopener noreferrer"> 
+                                <a href="https://github.com/Visaitas" target="_blank" rel="noopener noreferrer"> 
                                     <i className="fa fa-github-square" aria-hidden="true"  />
                                 </a>
                                  {/* Facebook */}
-                                 <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"> 
+                                 <a href="https://www.facebook.com/visitas.somrith" target="_blank" rel="noopener noreferrer"> 
                                     <i className="fa fa-facebook-square" aria-hidden="true"  />
                                 </a>
                                 {/* Youtube */}
